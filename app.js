@@ -3,6 +3,8 @@ var http = require('http').Server(app);
 const io = require('socket.io')(http);
 const stock = require("./stock.js");
 
+io.origins(['https://project-client.teachmeapp.me:443']);
+
 var volvo = {
     name: "Volvo 740",
     rate: 1.002,
@@ -31,6 +33,8 @@ var fiat = {
     startingPoint: 20,
 };
 var cakes = [volvo, saab, ford, fiat];
+
+
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
