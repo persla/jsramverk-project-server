@@ -2,6 +2,8 @@ var app = require('express')();
 var http = require('http').Server(app);
 const io = require('socket.io')(http);
 const stock = require("./stock.js");
+var cors = require('cors');
+app.use(cors());
 
 io.origins(['https://project-client.teachmeapp.me:443']);
 
