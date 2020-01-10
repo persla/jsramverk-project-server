@@ -1,8 +1,16 @@
-var app = require('express')();
-var http = require('http').Server(app);
-const io = require('socket.io')(http);
+// var app = require('express')();
+// var http = require('http').Server(app);
+// const io = require('socket.io')(http);
 const stock = require("./stock.js");
 var cors = require('cors');
+
+var express = require('express');
+var app = express();
+var server = app.listen(9000);
+var io = require('socket.io').listen(server);
+
+
+
 app.use(cors());
 
 io.origins(['https://project-client.teachmeapp.me:443']);
@@ -61,6 +69,6 @@ setInterval(function () {
 }, 5000);
 
 
-http.listen(9000, function() {
-    console.log('listening on *:9000');
-});
+// http.listen(9000, function() {
+//     console.log('listening on *:9000');
+// });
