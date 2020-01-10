@@ -13,7 +13,8 @@ var io = require('socket.io').listen(server);
 
 app.use(cors());
 
-io.origins(['https://project-client.teachmeapp.me:443']);
+// io.origins(['https://project-client.teachmeapp.me:443']);
+
 
 var volvo = {
     name: "Volvo 740",
